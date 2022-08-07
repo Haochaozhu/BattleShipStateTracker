@@ -5,6 +5,8 @@ VisualStudioVersion = 25.0.1700.7
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BattleShipStateTracker", "BattleShipStateTracker\BattleShipStateTracker.csproj", "{2ACDBED4-4BBB-4DC1-9544-8C43211C000C}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BattleShipStateTrackerTest", "BattleShipStateTrackerTest\BattleShipStateTrackerTest.csproj", "{11EBCE6D-BCD0-4EEE-B5D1-022A70221C4C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{2ACDBED4-4BBB-4DC1-9544-8C43211C000C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2ACDBED4-4BBB-4DC1-9544-8C43211C000C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2ACDBED4-4BBB-4DC1-9544-8C43211C000C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{11EBCE6D-BCD0-4EEE-B5D1-022A70221C4C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{11EBCE6D-BCD0-4EEE-B5D1-022A70221C4C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{11EBCE6D-BCD0-4EEE-B5D1-022A70221C4C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{11EBCE6D-BCD0-4EEE-B5D1-022A70221C4C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
