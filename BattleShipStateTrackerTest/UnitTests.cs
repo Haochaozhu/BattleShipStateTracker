@@ -47,9 +47,11 @@ public class UnitTests
 
         Assert.IsFalse(tracker.IsLost());
         tracker.TakeHit(1, 3);
-        tracker.TakeHit(2, 3);
-        tracker.TakeHit(3, 3);
         tracker.TakeHit(4, 3);
+
+        Assert.IsFalse(tracker.IsLost());
+        tracker.TakeHit(3, 3);
+        tracker.TakeHit(2, 3);
         Assert.IsTrue(tracker.IsLost());
     }
 }

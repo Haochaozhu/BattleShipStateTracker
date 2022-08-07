@@ -1,6 +1,10 @@
 # BattleShipStateTracker
 
-Implements state tracking of classic board game Battleship with O(1) time complexity in all operations.
+Implements the following state tracking operations of the classic board game Battleship.
+- Create board
+- Add ship
+- Take shit
+- Check if lost
 
 ## How to run
 - Download the file.

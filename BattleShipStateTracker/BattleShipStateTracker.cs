@@ -5,18 +5,14 @@
         const int BoardSize = 10;
         const int EmptyCell = 0;
         const int ShipCell = 1;
-        const int HitCell = 2;
 
         private int[,] board;
-        private int ships;
 
         public BattleShipStateTracker()
         {
             board = new int[BoardSize, BoardSize];
-            ships = 0;
         }
 
-        // O(1)
         // Assume given head and tail cells are valid, i.e. tailRow >= headRow or tailCol >= headCol
         public Boolean AddShip(int headRow, int headCol, int tailRow, int tailCol)
         {
@@ -38,33 +34,27 @@
                     board[i, j] = ShipCell;
                 }
             }
-            ships++;
             return true;
         }
 
-        // O(1)
         public String TakeHit(int row, int col)
         {
             if (row < 0 || col < 0 || row >= BoardSize || col >= BoardSize)
             {
                 return "Miss";
             }
-            if (board[row, col] != 1)
+            if (board[row, col] == EmptyCell)
             {
                 return "Miss";
             }
-            if (IsShipTail(row, col))
-            {
-                ships--;
-            }
-            board[row, col] = HitCell;
+            
+            board[row, col] = EmptyCell;
             return "Hit";
         }
 
-        // O(1)
         public Boolean IsLost()
         {
-            return ships == 0;
+            return !HasShip();
         }
 
 
@@ -86,21 +76,16 @@
             return true;
         }
 
-        private Boolean IsShipTail(int row, int col)
+        private Boolean HasShip()
         {
-            Boolean isRightEmpty = true;
-            Boolean isDownEmpty = true;
-            int down = row + 1;
-            int right = col + 1;
-            if (down < BoardSize)
+            for (int i = 0; i < BoardSize; i++)
             {
-                if (board[down, col] != EmptyCell) isDownEmpty = false;
+                for (int j = 0; j < BoardSize; j++)
+                {
+                    if (board[i, j] == ShipCell) return true;
+                }
             }
-            if (right < BoardSize)
-            {
-                if (board[row, right] != EmptyCell) isRightEmpty = false;
-            }
-            return isRightEmpty && isDownEmpty;
+            return false;
         }
 
         public void PrintBoard()
